@@ -1,22 +1,23 @@
 <div class="container">
-  <div class="item" *ngFor="let item of grid">
-    <div class="col-2">
+  <mat-grid-list cols="6" *ngFor="let item of grid">
+    <mat-grid-tile>
       {{ item.city }}
-    </div>
-    <div class="col-2">
+    </mat-grid-tile>
+    <mat-grid-tile>
       {{ item.start_date }}
-    </div>
-    <div class="col-2">
+    </mat-grid-tile>
+    <mat-grid-tile>
       {{ item.end_date }}
-    </div>
-    <div class="col-2">
+    </mat-grid-tile>
+    <mat-grid-tile>
       {{ item.price }}
-    </div>
-    <div class="col-2">
+    </mat-grid-tile>
+    <mat-grid-tile>
       {{ item.status }}
-    </div>
-    <div class="col-2">
-      "-{{ item.ccolor }}-"
-    </div>
-  </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      "-{{ item.color }}-"
+    </mat-grid-tile>
+  </mat-grid-list>
 </div>
+
