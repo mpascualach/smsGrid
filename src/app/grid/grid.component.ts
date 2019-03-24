@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 declare var require: any
 
-// const gridObject = require('./grid.json');
+const gridObject = require('./grid.json');
 const gridPortionObject = require('./gridportion.json');
 
 @Component({
@@ -22,6 +22,14 @@ export class GridComponent implements OnInit {
   ngOnInit() {
     // console.log(gridObject);
     console.log(gridPortionObject);
+  }
+
+  sortGrid(){
+
+  }
+
+  filterDates(){
+    
   }
 
 }

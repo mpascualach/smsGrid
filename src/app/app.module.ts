@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { MatGridListModule } from '@angular/material/grid-list';
 
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
@@ -21,7 +23,8 @@ import { RegistrationComponent } from './registration/registration.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    MatGridListModule
+    MatGridListModule,
+    ButtonsModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

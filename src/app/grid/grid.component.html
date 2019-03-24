@@ -1,5 +1,43 @@
-<div class="container">
-  <mat-grid-list cols="6" *ngFor="let item of grid">
+<div class="dateControls">
+  <form class="date-filter-form">
+    <input type="text"
+    placeholder="Start date"
+    class="form-control date-filter"
+    bsDatepicker>
+
+    <input type="text"
+    placeholder="End date"
+    class="form-control date-filter"
+    bsDatepicker>
+
+    <button type="submit" class="btn btn-primary">Search</button>
+  </form>
+</div>
+<div class="projectList container">
+
+  <mat-grid-list cols="6" rowHeight="50px">
+    <mat-grid-tile (click)="sortGrid('city')">
+      City
+    </mat-grid-tile>
+    <mat-grid-tile (click)="sortGrid('start-date')">
+      Start date
+    </mat-grid-tile>
+    <mat-grid-tile (click)="sortGrid('end-date')">
+      End date
+    </mat-grid-tile>
+    <mat-grid-tile (click)="sortGrid('price')">
+      Price
+    </mat-grid-tile>
+    <mat-grid-tile (click)="sortGrid('status')">
+      Status
+    </mat-grid-tile>
+    <mat-grid-tile (click)="sortGrid('color')">
+      Color
+    </mat-grid-tile>
+  </mat-grid-list>
+
+  <mat-grid-list cols="6" *ngFor="let item of grid" 
+    rowHeight="50px" class="grid-content">
     <mat-grid-tile>
       {{ item.city }}
     </mat-grid-tile>
@@ -10,7 +48,7 @@
       {{ item.end_date }}
     </mat-grid-tile>
     <mat-grid-tile>
-      {{ item.price }}
+      {{ item.price }} €
     </mat-grid-tile>
     <mat-grid-tile>
       {{ item.status }}
