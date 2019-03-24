@@ -18,21 +18,27 @@
   <mat-grid-list cols="6" rowHeight="50px">
     <mat-grid-tile (click)="sortGrid('city')">
       City
+      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'city'"></i>
     </mat-grid-tile>
     <mat-grid-tile (click)="sortGrid('start-date')">
       Start date
+      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'start-date'"></i>
     </mat-grid-tile>
     <mat-grid-tile (click)="sortGrid('end-date')">
       End date
+      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'end-date'"></i>
     </mat-grid-tile>
     <mat-grid-tile (click)="sortGrid('price')">
       Price
+      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'price'"></i>
     </mat-grid-tile>
     <mat-grid-tile (click)="sortGrid('status')">
       Status
+      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'status'"></i>
     </mat-grid-tile>
     <mat-grid-tile (click)="sortGrid('color')">
       Color
+      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'color'"></i>
     </mat-grid-tile>
   </mat-grid-list>
 
