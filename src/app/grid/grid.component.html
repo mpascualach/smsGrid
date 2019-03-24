@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="item" *ngFor="let item of grid">
+    <div class="col-2">
+      {{ item.city }}
+    </div>
+    <div class="col-2">
+      {{ item.start_date }}
+    </div>
+    <div class="col-2">
+      {{ item.end_date }}
+    </div>
+    <div class="col-2">
+      {{ item.price }}
+    </div>
+    <div class="col-2">
+      {{ item.status }}
+    </div>
+    <div class="col-2">
+      "-{{ item.ccolor }}-"
+    </div>
+  </div>
+</div>
