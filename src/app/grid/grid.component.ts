@@ -20,9 +20,6 @@ export class GridComponent implements OnInit {
 
   constructor( public http: HttpClient ) {
     this.originalGrid = this.grid;
-    this.originalGrid.forEach(m => {
-      console.log(m.city);
-    })
   }
 
   ngOnInit() {
@@ -39,12 +36,13 @@ export class GridComponent implements OnInit {
         this.grid = this.sortDates(this.originalGrid, true);
         break;
       case 'end-date':
-        this.grid = this.sortDates(this.originalGrid, true);
+        this.grid = this.sortDates(this.originalGrid, false);
         break;
       case 'price':
         this.grid = this.originalGrid.sort(( a, b ) => a.price - b.price );
         break;
       case 'status':
+        this.grid = this.originalGrid.sort(( a, b ) => a.status.localeCompare(b.status))
       case 'color':
         this.grid = this.originalGrid.sort(( a, b ) => a.color.localeCompare(b.color) );
     }
@@ -52,12 +50,14 @@ export class GridComponent implements OnInit {
 
   sortDates(array, start){
     let sorted = array.sort(function (a, b) { 
-      var aa = a.split('/').reverse().join(),
-      bb = b.split('/').reverse().join();
+      let aa = start ? a.start_date.split('/').reverse().join() : a.end_date.split("/");
+      let bb = start ? b.start_date.split('/').reverse().join() : b.end_date.split("/");
       return aa < bb ? -1 : (aa > bb ? 1 : 0);
     });
     return start ? sorted : sorted.reverse();
   }
+
+  
 
   filterDates(){
 
