@@ -18,50 +18,71 @@
   <mat-grid-list cols="6" rowHeight="50px">
     <mat-grid-tile (click)="sortGrid('city')">
       City
-      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'city'"></i>
+      <div class="sort-arrow" *ngIf="selected == 'city'">
+        <i class="fa fa-angle-up" *ngIf="!reversed"></i>
+        <i class="fa sort-arrow fa-angle-down" *ngIf="reversed"></i>
+      </div>
     </mat-grid-tile>
     <mat-grid-tile (click)="sortGrid('start-date')">
       Start date
-      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'start-date'"></i>
+      <div class="sort-arrow" *ngIf="selected == 'start-date'">
+        <i class="fa sort-arrow fa-angle-up" *ngIf="!reversed"></i>
+        <i class="fa sort-arrow fa-angle-down" *ngIf="reversed"></i>
+      </div>
     </mat-grid-tile>
     <mat-grid-tile (click)="sortGrid('end-date')">
       End date
-      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'end-date'"></i>
+      <div class="sort-arrow" *ngIf="selected == 'end-date'">
+        <i class="fa sort-arrow fa-angle-up" *ngIf="!reversed"></i>
+        <i class="fa sort-arrow fa-angle-down" *ngIf="reversed"></i>
+      </div>
     </mat-grid-tile>
     <mat-grid-tile (click)="sortGrid('price')">
       Price
-      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'price'"></i>
+      <div class="sort-arrow" *ngIf="selected == 'price'">
+        <i class="fa sort-arrow fa-angle-up" *ngIf="!reversed"></i>
+        <i class="fa sort-arrow fa-angle-down" *ngIf="reversed"></i>
+      </div>
     </mat-grid-tile>
     <mat-grid-tile (click)="sortGrid('status')">
       Status
-      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'status'"></i>
+      <div class="sort-arrow" *ngIf="selected == 'status'">
+        <i class="fa sort-arrow fa-angle-up" *ngIf="!reversed"></i>
+        <i class="fa sort-arrow fa-angle-down" *ngIf="reversed"></i>
+      </div>
     </mat-grid-tile>
     <mat-grid-tile (click)="sortGrid('color')">
       Color
-      <i class="fa sort-arrow fa-angle-up" *ngIf="selected == 'color'"></i>
+      <div class="sort-arrow" *ngIf="selected == 'color'">
+        <i class="fa sort-arrow fa-angle-up" *ngIf="!reversed"></i>
+        <i class="fa sort-arrow fa-angle-down" *ngIf="reversed"></i>
+      </div>
     </mat-grid-tile>
   </mat-grid-list>
 
-  <mat-grid-list cols="6" *ngFor="let item of grid" 
-    rowHeight="50px" class="grid-content">
-    <mat-grid-tile>
-      {{ item.city }}
-    </mat-grid-tile>
-    <mat-grid-tile>
-      {{ item.start_date }}
-    </mat-grid-tile>
-    <mat-grid-tile>
-      {{ item.end_date }}
-    </mat-grid-tile>
-    <mat-grid-tile>
-      {{ item.price }} €
-    </mat-grid-tile>
-    <mat-grid-tile>
-      {{ item.status }}
-    </mat-grid-tile>
-    <mat-grid-tile>
-      "-{{ item.color }}-"
-    </mat-grid-tile>
-  </mat-grid-list>
+  <div class="grid-content">
+    <mat-grid-list cols="6" *ngFor="let item of grid" 
+      rowHeight="50px">
+      <mat-grid-tile>
+        {{ item.city }}
+      </mat-grid-tile>
+      <mat-grid-tile>
+        {{ item.start_date }}
+      </mat-grid-tile>
+      <mat-grid-tile>
+        {{ item.end_date }}
+      </mat-grid-tile>
+      <mat-grid-tile>
+        {{ item.price }} €
+      </mat-grid-tile>
+      <mat-grid-tile>
+        {{ item.status }}
+      </mat-grid-tile>
+      <mat-grid-tile>
+        "-{{ item.color }}-"
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+
 </div>
 

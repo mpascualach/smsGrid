@@ -13,7 +13,8 @@ const gridPortionObject = require('./gridportion.json');
 })
 
 export class GridComponent implements OnInit {
-  grid = gridPortionObject;
+  // grid = gridPortionObject; //for debugging
+  grid = gridObject;
   originalGrid: Array<any>;
   selected: string;
   reversed: boolean = false;
@@ -51,7 +52,7 @@ export class GridComponent implements OnInit {
       }
     }
     else {
-      this.reversed = true;
+      this.reversed = this.reversed ? false : true;
       this.grid = this.grid.reverse(); 
     }
   }
@@ -66,7 +67,7 @@ export class GridComponent implements OnInit {
   }
 
   onChange(){
-    
+
   }
 
   filterDates(){
