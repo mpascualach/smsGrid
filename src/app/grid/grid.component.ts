@@ -19,6 +19,8 @@ export class GridComponent implements OnInit {
   selected: string;
   reversed: boolean = false;
 
+  startDate: any;
+  endDate: any;
 
   constructor( public http: HttpClient ) {
     this.originalGrid = this.grid;
@@ -66,8 +68,8 @@ export class GridComponent implements OnInit {
     return start ? sorted : sorted.reverse();
   }
 
-  onChange(){
-
+  onChange(e){
+    console.log(e)
   }
 
   filterDates(){

@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GridComponent } from './grid/grid.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RegistrationComponent } from './registration/registration.component';
     FormsModule,
     ReactiveFormsModule,
     MatGridListModule,
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    BsDatepickerModule.forRoot()
   ],
   providers: [FormBuilder],
   bootstrap: [AppComponent]
