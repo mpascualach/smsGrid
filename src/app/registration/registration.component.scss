@@ -1,1 +1,26 @@
 @import url('https://unpkg.com/bootstrap@3.3.7/dist/css/bootstrap.min.css');
+
+$primary: #0064C0;
+
+.form-container {
+    position: absolute;
+    width: 50%;
+    height: 40%;
+    left: 0;
+    right: 0;
+    margin-top: 15%;
+    padding: 30px;
+    background-color: $primary;
+    form {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .submit-btn {
+            width: 60%;
+            margin: 0 auto;
+        }        
+    }
+}
+
+
