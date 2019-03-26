@@ -16,6 +16,9 @@ $primary: #0064C0;
         display: flex;
         flex-direction: column;
         justify-content: space-around;
+        .form-control {
+            height: 50px;
+        }
         .submit-btn {
             width: 60%;
             margin: 0 auto;

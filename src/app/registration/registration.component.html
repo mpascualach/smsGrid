@@ -1,28 +1,25 @@
 <div class="form-container container">
-  <form (ngSubmit)="onSubmit()" #userData="ngForm" (ngSubmit)="login(userData)">
+  <form [formGroup]="userData" (ngSubmit)="login(userData)">
     <div class="form-group">
-      <input type="text" class="form-control" placeholder="Name"
-        id="name" [(ngModel)]="model.name" required #name="ngModel" value="">
-        <div [hidden]="name.valid || name.pristine"
+      <input type="text" class="form-control" formControlName="name" placeholder="Name">
+        <!-- <div *ngIf="!name.valid"
             class="alert alert-danger">
           Name is required
-        </div>
+        </div> -->
     </div>
     <div class="form-group">
-      <input type="password" class="form-control"  placeholder="Password" 
-        id="password" [(ngModel)]="model.password" required >
-        <div [hidden]="password.valid"
+      <input type="password" class="form-control" formControlName="password" placeholder="Password">
+        <!-- <div [hidden]="password.valid"
           class="alert alert-danger">
           Password is required
-        </div>
+        </div> -->
     </div>
     <div class="form-group">
-      <input type="password" class="form-control" placeholder="Confirm password..." 
-        id="confirmPassword" [(ngModel)]="model.confirm" required >
-        <div [hidden]="password.valid"
+      <input type="password" class="form-control" formControlName="confirmPassword" placeholder="Confirm password..." required>
+        <!-- <div [hidden]="!userData.hasError('notSame')"
           class="alert alert-danger">
-          Password is required
-        </div>
+          Please confirm your password
+        </div> -->
     </div>
     <button type="submit" class="btn btn-danger submit-btn">Sign up</button>
   </form>
