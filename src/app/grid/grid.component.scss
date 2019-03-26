@@ -24,6 +24,9 @@
     padding-top: 0px;
     background-color: green;
     border-radius: 5px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
 }
 
 .grid-content {
@@ -33,6 +36,11 @@
     overflow-y: scroll;
     background-color: white;
     border-radius: 2px;
+}
+
+.grid-headers {
+    color: white;
+    font-weight: 600;
 }
 
 mat-grid-list.mat-grid-list {

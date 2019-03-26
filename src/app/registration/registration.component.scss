@@ -4,7 +4,7 @@ $primary: #0064C0;
 
 .form-container {
     position: absolute;
-    width: 50%;
+    width: 40%;
     height: 40%;
     left: 0;
     right: 0;
@@ -27,6 +27,11 @@ $primary: #0064C0;
             height: 40px;
         }        
     }
+}
+
+.alert {
+    padding: 5px;
+    margin-bottom: 0px;
 }
 
 
