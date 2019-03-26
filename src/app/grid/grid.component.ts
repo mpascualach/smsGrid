@@ -68,12 +68,41 @@ export class GridComponent implements OnInit {
     return start ? sorted : sorted.reverse();
   }
 
-  onChange(e){
-    console.log(e)
+  onChange(e, start){
+    let date = e.toLocaleString();
+    let clippedDate = this.clipDate(date);
+    start ? this.startDate = clippedDate : this.endDate = clippedDate;
+    console.log("Start date: ", this.startDate, "End date: ", this.endDate)
+  }
+
+  clipDate(date){
+    let arrayDate = date.toLocaleString().split("/").reverse();
+    let month = arrayDate[1].toString().length > 1 ? arrayDate[1] : "0" + arrayDate[1];
+    let day = arrayDate[2].toString().length > 1 ? arrayDate[2] : "0" + arrayDate[2];
+    arrayDate[1] = month, arrayDate[2] = day;
+    return arrayDate.join("");
   }
 
   filterDates(){
-
+    if (this.startDate && this.endDate){
+      this.grid = this.originalGrid.filter(m => {
+        return this.clipDate(m.start_date) > this.startDate && this.clipDate(m.end_date) < this.endDate
+      })
+      return;
+    }
+    else if (this.startDate && !this.endDate){
+      this.grid = this.originalGrid.filter(m => {
+        return this.clipDate(m.start_date) > this.startDate
+      })
+      return;
+    }
+    else if (this.endDate && !this.startDate) {
+      this.grid = this.originalGrid.filter(m => {
+        return this.clipDate(m.end_date) < this.endDate;
+      })
+      return;
+    }
+    
   }
 
 }

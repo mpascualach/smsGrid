@@ -3,15 +3,14 @@
     <input type="text"
     placeholder="Start date"
     class="form-control date-filter"
-    (change)="onChange($event)"
-    bsDatepicker>
+    bsDatepicker (bsValueChange)="onChange($event, true)">
 
     <input type="text"
     placeholder="End date"
     class="form-control date-filter"
-    bsDatepicker>
+    bsDatepicker (bsValueChange)="onChange($event, false)">
 
-    <button type="submit" class="btn btn-primary">Search</button>
+    <button type="submit" class="btn btn-primary" (click)="filterDates()">Filter dates</button>
   </form>
 </div>
 <div class="projectList container">
